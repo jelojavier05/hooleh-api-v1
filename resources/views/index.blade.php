@@ -54,7 +54,7 @@
                             <img src="assets/dist/img/avatar.png" class="img-circle" alt="User Image">
                         </div>
                         <div class="pull-left info">
-                            <p>Administrator</p>
+                            <p>User Name</p>
                             <a href="#"><i class="fa fa-circle text-success"></i> Administrator</a>
                         </div>
                     </div>
@@ -63,7 +63,7 @@
                     <ul class="sidebar-menu">
                         <li class="header">MAIN NAVIGATION</li>
                         <li class="treeview">
-                            <a href="?menu=home">
+                            <a href="{{ URL::to('/dashboard') }}">
                                 <i class="fa fa-dashboard"></i> <span>Dashboard</span>
                                 <span class="pull-right-container">
                                 </span>
@@ -78,8 +78,8 @@
                                 </span>
                             </a>
                             <ul class="treeview-menu">
-                                <li><a href="?menu=violation"><i class="fa fa-circle-o"></i> Violation</a></li>
-                                <li><a href="?menu=enforcer"><i class="fa fa-circle-o"></i> Enforcer</a></li>
+                                <li><a href="{{ URL::to('/violation') }}"><i class="fa fa-circle-o"></i> Violations</a></li>
+                                <li><a href="{{ URL::to('/enforcer') }}"><i class="fa fa-circle-o"></i> Enforcer</a></li>
                             </ul>
                         </li>
                         <li class="treeview">
@@ -92,7 +92,7 @@
                             </a>
                             <ul class="treeview-menu">
                                 <li><a href="?menu=violation_transaction"><i class="fa fa-circle-o"></i> Violation Reports</a></li>
-                                <li><a href="?menu=driver"><i class="fa fa-circle-o"></i> Violent Drivers</a></li>
+                                
                             </ul>
                         </li>
                     </ul>
@@ -132,7 +132,8 @@
         <!-- page script -->
         <script>
         $(function () {
-            $("#example1").DataTable();
+            $("#dtblViolation").DataTable();
+            $("#dtblEnforcer").DataTable();
             
         });
         </script>

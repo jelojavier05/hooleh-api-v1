@@ -12,9 +12,20 @@
 */
 
 Route::get('/', function () {
-    return view('index');
+    return view('dashboard');
 });
 
+Route::get('/dashboard', function () {
+    return view('dashboard');
+});
+
+Route::get('/violation', function () {
+    return view('violation');
+});
+
+Route::get('/enforcer', function () {
+    return view('enforcer');
+});
 
 Route::resource('/api/v1/enforcers', 'api\v1\EnforcerController');
 Route::resource('/api/v1/drivers', 'api\v1\DriverController');	
