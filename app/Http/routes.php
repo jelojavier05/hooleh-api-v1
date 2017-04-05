@@ -27,7 +27,11 @@ Route::get('/enforcer', function () {
     return view('enforcer');
 });
 
-Route::resource('/api/v1/enforcers', 'api\v1\EnforcerController');
+Route::group(['middleware' => 'cors'], function(){
+	Route::resource('/api/v1/enforcers','api\v1\EnforcerController');
+});
+
+
 Route::resource('/api/v1/drivers', 'api\v1\DriverController');	
 Route::resource('/api/v1/violations', 'api\v1\ViolationController');
 Route::resource('/api/v1/driverviolations', 'api\v1\DriverViolationController');
